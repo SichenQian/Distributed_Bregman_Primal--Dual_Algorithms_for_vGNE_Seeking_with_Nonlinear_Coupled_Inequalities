@@ -1,0 +1,27 @@
+SEPARATE STATIONARY-VERSUS-GLOBAL DIAGNOSTIC
+Two-player annular example, separate from the ten-agent certificate.
+
+INITIAL CONDITIONS AND SOLVER
+Direct state order: x_1 x_2 lambda
+Direct initial state: -0.40499999999999997 -0.57000000000000006 4 
+Canonical state order: x_1 x_2 lambda eta_1 eta_2
+Canonical initial state: -0.40499999999999997 -0.57000000000000006 1 0.33319999999999994 0.49566262500000002 
+Solver: ode15s, RelTol=2.0000000000000001e-10, AbsTol=2e-12, MaxStep=0.0050000000000000001
+Time interval: [0, 20]; output samples: 1601
+Gains: kx=5, kdirect=10, klambda=10, keta=10
+
+Annular game parameters:
+Player 1 uses r_in=0.42, r_out=0.98, q_1=0.39200.
+Player 2 uses r_in=0.55, r_out=1.08, q_2=0.80136.
+
+Both flows use the same initial primal profile, with different multiplier and canonical-state initializations.
+
+Direct terminal primal state: -0.41999999851612313 -0.5500000010425955
+Canonical terminal primal state: 0.98000000000000054 1.0800000000000003
+Direct terminal KKT residual : 2.0979102053964563e-09
+Direct terminal global BR gap: 3.1176596001864643
+Canonical terminal KKT residual : 3.1809243535692828e-15
+Canonical terminal global BR gap: 0
+
+A small KKT residual with a positive unilateral global best-response gap certifies stationarity without global Nash optimality.
+This diagnostic is separate from the ten-agent theorem-parameter certificate.

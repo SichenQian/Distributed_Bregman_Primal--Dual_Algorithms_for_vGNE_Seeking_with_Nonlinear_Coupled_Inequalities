@@ -1,0 +1,3 @@
+Method,TerminalKKTResidual,TerminalGlobalBRGap,TerminalConstraintResidual,DistanceToExpectedBranch
+direct original-constraint PD,2.09791020539646e-09,3.11765960018646,-1.80157486151522e-10,1.813531307023e-09
+canonical lifted dynamics,3.18092435356928e-15,0,6.80011602582908e-16,5.97873396028182e-16

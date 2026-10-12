@@ -58,6 +58,24 @@ writetable(equilibrium_table,fullfile(out_dir,'nonconvex_equilibrium_targets.csv
 assert(all(audit.Pass), ...
     'Theorem-inequality check failed.');
 
+% Export round-trip double-precision values for the Table III certificate.
+fid=fopen(fullfile(out_dir,'table_III_certificate.txt'),'w');
+assert(fid~=-1,'Cannot open certificate report.');
+file_cleanup=onCleanup(@() fclose(fid));
+fprintf(fid,'Table III numerical certificate\n');
+fprintf(fid,'MATLAB version: %s\n',version);
+fprintf(fid,'gamma = %.17g\n',p.gamma);
+fprintf(fid,'iota  = %.17g\n\n',m.iota);
+for j=1:height(audit)
+    fprintf(fid,'%s\n',char(audit.Condition(j)));
+    fprintf(fid,'  value = %.17g\n',audit.Value(j));
+    fprintf(fid,'  lower = %.17g\n',audit.Lower(j));
+    fprintf(fid,'  upper = %.17g\n',audit.Upper(j));
+    fprintf(fid,'  margin = %.17g\n',audit.Margin(j));
+    fprintf(fid,'  pass  = %d\n\n',audit.Pass(j));
+end
+clear file_cleanup
+
 %% Canonical mirror dynamics
 t_eval=unique([0,logspace(-9,-2,700),linspace(0.0101,t_final,2300)]);
 
@@ -92,6 +110,8 @@ solver_sensitivity=table(post.Check,post.Value,post_tight.Value, ...
 disp(solver_sensitivity);
 writetable(solver_sensitivity, ...
     fullfile(out_dir,'nonconvex_solver_sensitivity.csv'));
+assert(all(post_tight.Pass), ...
+    'A tightened-solver post-simulation numerical check failed.');
 
 x_end=squeeze(proposed.x(end,:,:));
 x_end_tight=squeeze(proposed_tight.x(end,:,:));
@@ -706,6 +726,12 @@ function out=run_annular_globality_diagnostic()
     assert(max(abs(td-t))<1e-12 && max(abs(tc-t))<1e-12);
 
     out.t=t;
+    out.direct_initial_state=yd0;
+    out.canonical_initial_state=yc0;
+    out.solver='ode15s';
+    out.solver_rel_tol=odeget(opts,'RelTol');
+    out.solver_abs_tol=odeget(opts,'AbsTol');
+    out.solver_max_step=odeget(opts,'MaxStep');
     out.direct_x=yd(:,1:2); out.direct_lambda=max(yd(:,3),0);
     out.canonical_x=yc(:,1:2); out.canonical_lambda=max(yc(:,3),0);
     out.canonical_eta=min(max(yc(:,4:5),d.etalo),d.etahi);
@@ -1076,6 +1102,20 @@ function write_globality_report(diagnostic,out_dir)
     d=diagnostic.model;
     fprintf(fid,'SEPARATE STATIONARY-VERSUS-GLOBAL DIAGNOSTIC\n');
     fprintf(fid,'Two-player annular example, separate from the ten-agent certificate.\n\n');
+    fprintf(fid,'INITIAL CONDITIONS AND SOLVER\n');
+    fprintf(fid,'Direct state order: x_1 x_2 lambda\n');
+    fprintf(fid,'Direct initial state: ');
+    fprintf(fid,'%.17g ',diagnostic.direct_initial_state);
+    fprintf(fid,'\nCanonical state order: x_1 x_2 lambda eta_1 eta_2\n');
+    fprintf(fid,'Canonical initial state: ');
+    fprintf(fid,'%.17g ',diagnostic.canonical_initial_state);
+    fprintf(fid,'\nSolver: %s, RelTol=%.17g, AbsTol=%.17g, MaxStep=%.17g\n', ...
+        diagnostic.solver,diagnostic.solver_rel_tol, ...
+        diagnostic.solver_abs_tol,diagnostic.solver_max_step);
+    fprintf(fid,'Time interval: [%.17g, %.17g]; output samples: %d\n', ...
+        diagnostic.t(1),diagnostic.t(end),numel(diagnostic.t));
+    fprintf(fid,'Gains: kx=%.17g, kdirect=%.17g, klambda=%.17g, keta=%.17g\n\n', ...
+        d.kx,d.kdirect,d.klambda,d.keta);
     fprintf(fid,['Annular game parameters:\n' ...
         'Player 1 uses r_in=%.2f, r_out=%.2f, q_1=%.5f.\n' ...
         'Player 2 uses r_in=%.2f, r_out=%.2f, q_2=%.5f.\n' ...
@@ -1083,10 +1123,12 @@ function write_globality_report(diagnostic,out_dir)
         d.rin(1),d.rout(1),d.q(1),d.rin(2),d.rout(2),d.q(2));
     fprintf(fid,['Both flows use the same initial primal profile, with different ' ...
         'multiplier and canonical-state initializations.\n\n']);
-    fprintf(fid,'Direct terminal KKT residual : %.12e\n',diagnostic.direct_kkt(end));
-    fprintf(fid,'Direct terminal global BR gap: %.12e\n',diagnostic.direct_gap(end));
-    fprintf(fid,'Canonical terminal KKT residual : %.12e\n',diagnostic.canonical_kkt(end));
-    fprintf(fid,'Canonical terminal global BR gap: %.12e\n',diagnostic.canonical_gap(end));
+    fprintf(fid,'Direct terminal primal state: %.17g %.17g\n',diagnostic.direct_x(end,:));
+    fprintf(fid,'Canonical terminal primal state: %.17g %.17g\n',diagnostic.canonical_x(end,:));
+    fprintf(fid,'Direct terminal KKT residual : %.17g\n',diagnostic.direct_kkt(end));
+    fprintf(fid,'Direct terminal global BR gap: %.17g\n',diagnostic.direct_gap(end));
+    fprintf(fid,'Canonical terminal KKT residual : %.17g\n',diagnostic.canonical_kkt(end));
+    fprintf(fid,'Canonical terminal global BR gap: %.17g\n',diagnostic.canonical_gap(end));
     fprintf(fid,['\nA small KKT residual with a positive unilateral global best-response ' ...
         'gap certifies stationarity without global Nash optimality.\n']);
     fprintf(fid,['This diagnostic is separate from ' ...

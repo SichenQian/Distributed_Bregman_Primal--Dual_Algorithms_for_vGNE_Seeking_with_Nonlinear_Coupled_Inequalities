@@ -1,0 +1,12 @@
+Check,Baseline,Tightened,AbsDifference,Tolerance,BaselinePass,TightenedPass
+proposed terminal normalized total error,1.54676847587769e-07,1.54263318534756e-07,4.13529053013547e-10,3e-05,1,1
+proposed terminal estimate disagreement,6.45330563040857e-15,4.73688154982616e-15,1.71642408058241e-15,3e-05,1,1
+proposed multiplier disagreement,0,7.105427357601e-15,7.105427357601e-15,3e-05,1,1
+proposed active original constraint,8.88178419700125e-13,4.44089209850063e-13,4.44089209850063e-13,3e-05,1,1
+proposed active canonical constraint,8.88178419700125e-13,4.44089209850063e-13,4.44089209850063e-13,3e-05,1,1
+proposed canonical consistency,2.9678868798477e-09,2.959951196568e-09,7.93568327970088e-12,2e-06,1,1
+proposed terminal KKT residual,4.45351333834324e-10,2.93096969479846e-10,1.52254364354478e-10,0.04,1,1
+proposed positive fitted exponential rate,0.38016509684039,0.380385081657474,0.00021998481708424,0,1,1
+zero-sum omega invariant,0,0,0,2e-08,1,1
+terminal omega-target residual,2.62974626308383e-14,2.69324576345839e-14,6.34995003745628e-16,2e-05,1,1
+negative original-constraint Hessian eigenvalue,0.6591968,0.6591968,0,0,1,1

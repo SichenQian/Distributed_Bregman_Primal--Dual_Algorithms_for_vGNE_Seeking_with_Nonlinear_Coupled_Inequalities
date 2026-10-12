@@ -1,0 +1,12 @@
+Check,Value,Tolerance,Pass
+proposed terminal normalized total error,1.54676847587769e-07,3e-05,1
+proposed terminal estimate disagreement,6.45330563040857e-15,3e-05,1
+proposed multiplier disagreement,0,3e-05,1
+proposed active original constraint,8.88178419700125e-13,3e-05,1
+proposed active canonical constraint,8.88178419700125e-13,3e-05,1
+proposed canonical consistency,2.9678868798477e-09,2e-06,1
+proposed terminal KKT residual,4.45351333834324e-10,0.04,1
+proposed positive fitted exponential rate,0.38016509684039,0,1
+zero-sum omega invariant,0,2e-08,1
+terminal omega-target residual,2.62974626308383e-14,2e-05,1
+negative original-constraint Hessian eigenvalue,0.6591968,0,1

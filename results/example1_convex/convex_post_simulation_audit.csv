@@ -1,0 +1,13 @@
+Check,Value,Tolerance,Pass
+terminal normalized state error,3.85888702216462e-06,3e-05,1
+terminal estimate error,8.04302258847396e-10,2e-05,1
+terminal multiplier disagreement,6.73451634725097e-06,2e-05,1
+terminal active-constraint residual,2.97821004746623e-07,2e-05,1
+terminal KKT residual,5.28781433676701e-06,0.02,1
+zero-sum omega residual,8.93729534823251e-15,2e-08,1
+terminal omega-target residual,4.18678938447501e-06,2e-05,1
+positive fitted exponential rate,1.28220471950662,0,1
+minimum action-boundary distance,1.22155681149168,0.001,1
+trajectory Fermi Hessian below certified bound,1.04009682040789,2.5,1
+heterogeneous equilibrium separation,0.139858835356085,0.001,1
+nonzero zero-sum auxiliary equilibrium,0.259487080437546,0.001,1

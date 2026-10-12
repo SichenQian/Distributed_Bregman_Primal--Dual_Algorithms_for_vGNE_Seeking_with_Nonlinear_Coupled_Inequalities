@@ -1,0 +1,9 @@
+Quantity,AbsDifference
+x terminal Frobenius difference,2.92896950210795e-15
+lambda terminal 2-norm difference,7.105427357601e-15
+omega terminal 2-norm difference,2.28038954259559e-15
+eta terminal Frobenius difference,1.2440305052139e-11
+original-constraint terminal difference,1.33226762955019e-12
+canonical-constraint terminal difference,1.33226762955019e-12
+consistency-residual terminal difference,7.93568327970088e-12
+KKT-residual terminal difference,1.52254364354478e-10

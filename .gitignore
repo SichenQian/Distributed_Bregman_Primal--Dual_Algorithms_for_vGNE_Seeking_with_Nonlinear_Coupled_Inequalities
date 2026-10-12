@@ -1,4 +1,21 @@
-results/
+# Keep only the verification records supplied with the tagged release.
+results/*
+!results/example1_convex/
+results/example1_convex/*
+!results/example1_convex/convex_theorem_audit.csv
+!results/example1_convex/convex_post_simulation_audit.csv
+!results/example1_convex/convex_equilibrium_audit.csv
+!results/example2_nonconvex/
+results/example2_nonconvex/*
+!results/example2_nonconvex/nonconvex_theorem_audit.csv
+!results/example2_nonconvex/nonconvex_model_constants.csv
+!results/example2_nonconvex/table_III_certificate.txt
+!results/example2_nonconvex/globality_gap_report.txt
+!results/example2_nonconvex/nonconvex_post_simulation_audit.csv
+!results/example2_nonconvex/nonconvex_solver_sensitivity.csv
+!results/example2_nonconvex/nonconvex_terminal_sensitivity.csv
+!results/example2_nonconvex/annular_globality_summary.csv
+reproduction_log_local.txt
 .venv/
 __pycache__/
 *.py[cod]

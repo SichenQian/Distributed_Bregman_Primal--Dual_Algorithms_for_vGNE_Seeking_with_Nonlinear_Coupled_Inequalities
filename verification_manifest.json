@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "release_tag": "TAC-v8-reproducibility",
+  "source_base_commit": "cbf1c5f9143d1d084742d900016d0f74688ed8a7",
+  "environment": {
+    "matlab": "24.1.0.2537033 (R2024a)",
+    "matlab_release": "2024a",
+    "matlab_platform": "PCWIN64",
+    "python": "3.13.15",
+    "numpy": "2.5.2",
+    "matplotlib": "3.11.1",
+    "platform": "Windows-11-10.0.26300-SP0"
+  },
+  "validation": {
+    "convex": {
+      "theorem_checks": 17,
+      "theorem_passed": 17,
+      "post_checks": 12,
+      "post_passed": 12
+    },
+    "nonconvex": {
+      "theorem_checks": 29,
+      "theorem_passed": 29,
+      "post_checks": 11,
+      "post_passed": 11,
+      "tightened_checks": 11,
+      "tightened_passed": 11,
+      "eq40_threshold": 654738.8864542497,
+      "iota": 1000000.0,
+      "gamma": 342932.9469016026,
+      "lyapunov_margins": [
+        {
+          "Condition": "A_tilde > 0",
+          "Value": 11894.348302769622
+        },
+        {
+          "Condition": "Schur margin > 0",
+          "Value": 108241.36125566182
+        },
+        {
+          "Condition": "C_tilde/delta3 > 0",
+          "Value": 74211.10453134445
+        },
+        {
+          "Condition": "D_tilde/delta3^2 > 0",
+          "Value": 34902.9211436021
+        },
+        {
+          "Condition": "E_tilde > 0",
+          "Value": 0.024744478908892392
+        }
+      ],
+      "terminal_sensitivity": [
+        {
+          "Quantity": "x terminal Frobenius difference",
+          "AbsDifference": 2.928969502107952e-15
+        },
+        {
+          "Quantity": "lambda terminal 2-norm difference",
+          "AbsDifference": 7.105427357601002e-15
+        },
+        {
+          "Quantity": "omega terminal 2-norm difference",
+          "AbsDifference": 2.2803895425955863e-15
+        },
+        {
+          "Quantity": "eta terminal Frobenius difference",
+          "AbsDifference": 1.2440305052138988e-11
+        },
+        {
+          "Quantity": "original-constraint terminal difference",
+          "AbsDifference": 1.3322676295501878e-12
+        },
+        {
+          "Quantity": "canonical-constraint terminal difference",
+          "AbsDifference": 1.3322676295501878e-12
+        },
+        {
+          "Quantity": "consistency-residual terminal difference",
+          "AbsDifference": 7.935683279700884e-12
+        },
+        {
+          "Quantity": "KKT-residual terminal difference",
+          "AbsDifference": 1.522543643544779e-10
+        }
+      ]
+    },
+    "diagnostic": {
+      "direct_initial_state": [
+        -0.40499999999999997,
+        -0.5700000000000001,
+        4
+      ],
+      "canonical_initial_state": [
+        -0.40499999999999997,
+        -0.5700000000000001,
+        1,
+        0.33319999999999994,
+        0.495662625
+      ],
+      "solver": "ode15s",
+      "rel_tol": 2e-10,
+      "abs_tol": 2e-12,
+      "max_step": 0.005,
+      "direct_terminal_x": [
+        -0.41999999851612313,
+        -0.5500000010425955
+      ],
+      "canonical_terminal_x": [
+        0.9800000000000005,
+        1.0800000000000003
+      ],
+      "direct_terminal_kkt": 2.0979102053964563e-09,
+      "canonical_terminal_kkt": 3.180924353569283e-15,
+      "direct_terminal_global_br_gap": 3.1176596001864643,
+      "canonical_terminal_global_br_gap": 0
+    },
+    "certificate_exact_double_roundtrip": true,
+    "initial_states_match_integrated_trajectories": true
+  },
+  "manuscript_bound_comparison": {
+    "precision_decimal_digits": 60,
+    "code_computed_constants": {
+      "eq40_threshold": "654738.886454249801079132828151298045606386207011586641843896",
+      "gammabar": "289760.384720920163595840462728640493855007226641141973342258",
+      "lyapunov_margins": [
+        "11894.3483027696221925150506493506493506493506493506493506494",
+        "108241.361255661767265826492655859154202327439063058197865466",
+        "74211.1045313444257254365508437120538525019417991007689173747",
+        "34902.9211436021027497356930118554808260696831344712923855601",
+        "0.024744478908892390949961681892294852466812616419570729459434"
+      ]
+    },
+    "manuscript_upper_bounds": {
+      "eq40_threshold": "654848.977833582162792207580178889905758473206693385293819052",
+      "gammabar": "289760.385943495453946291325481200447584371675612407415829109",
+      "lyapunov_margins": [
+        "11894.3482177531493506493506493506493506493506493506493506494",
+        "108241.358766911775956487462191493898563828970762674271061056",
+        "74186.6398381755798908656824023623477211755529102118800284858",
+        "34902.9211436020932921417353720322500000000",
+        "0.024742969792264167832558773892697274031563845050215208034434"
+      ]
+    },
+    "manuscript_displayed_threshold": "654900",
+    "manuscript_upper_bounds_inputs": {
+      "Lx": "1000.71",
+      "Leta": "0.004578",
+      "LGx": "0.44001",
+      "bar_rho_x": "0.120001"
+    }
+  },
+  "figure_exports": {
+    "png_count": 10,
+    "eps_count": 10,
+    "matlab_fig_count": 8,
+    "stems_relative_to_results": [
+      "figure1/convex_case",
+      "figure1/nonconvex_case",
+      "example1_convex/shared_topology",
+      "example1_convex/convex_tra",
+      "example1_convex/convex_aux",
+      "example1_convex/convex_exp",
+      "example2_nonconvex/nonconvex_tra",
+      "example2_nonconvex/nonconvex_aux",
+      "example2_nonconvex/nonconvex_exp",
+      "example2_nonconvex/nonconvex_globality"
+    ],
+    "png_decode_checks_passed": true,
+    "visual_inspection_completed": true
+  },
+  "matlab_execution": {
+    "exit_code": 0,
+    "completed_script_count": 2,
+    "success_marker": "REPRODUCTION_PASS",
+    "graphics_advisory_identifier": "MATLAB:print:ContentTypeImageSuggested",
+    "graphics_advisory_count": 3
+  },
+  "python_execution": {
+    "exit_code": 0,
+    "success_marker": "FIGURE1_REPRODUCTION_PASS"
+  },
+  "hash_method": "Git blob SHA-1 of the files stored in this release; verify with git rev-parse TAC-v8-reproducibility:<path>. The manifest itself is excluded to avoid a circular hash.",
+  "source_git_blob_sha1": {
+    "example_1_convex.m": "57a754ae95d93f19457b6207563bcafcdf49368b",
+    "example2_nonconvex.m": "e7f4a16ba0da365bb72721608b055580d6583630",
+    "main.py": "612f868c91cd146e6790f4da3f9e8efe2cfe73e6",
+    "requirements.txt": "4db28d8cd0503125fa813da0bdcac0a9d4ffee87"
+  },
+  "document_git_blob_sha1": {
+    "README.md": "450d7772a5e4effe6672f765894e8ca6946800c8",
+    ".gitignore": "bb739665a41f45095e8e7ef587643eaf3e4603d3",
+    "LICENSE": "2d48f82a9808ef20c36c235839284e0f7d24d1e9"
+  },
+  "verification_record_git_blob_sha1": {
+    "reproduction_log.txt": "1d9e28010a8096a5d00d8a1cf1f508c15623294a",
+    "python_reproduction_log.txt": "d289e946b6ecd0c8b421e13f864994b005d71a3a",
+    "results/example1_convex/convex_theorem_audit.csv": "78050c0b75f46124ba877ac3fcae1dd09ed9234d",
+    "results/example1_convex/convex_post_simulation_audit.csv": "19070bdccca8f5d33f3c22a764d1e7fbec7ef788",
+    "results/example1_convex/convex_equilibrium_audit.csv": "fb4f4697828961ef60f9695635f3bf172cad0005",
+    "results/example2_nonconvex/nonconvex_theorem_audit.csv": "b44a2d70c9871c71d2dec37d5f7a5183a6462d3e",
+    "results/example2_nonconvex/nonconvex_model_constants.csv": "b64b16354df0f82b42603e0aaf0e376480dcf282",
+    "results/example2_nonconvex/table_III_certificate.txt": "a6112b475811959b260e2cdab4c6dee06cc832be",
+    "results/example2_nonconvex/globality_gap_report.txt": "995c81aac683d98afc18022ba3354b5a032fad89",
+    "results/example2_nonconvex/nonconvex_post_simulation_audit.csv": "c4003b285d430345e2fc6ebd72b4e89329b092d5",
+    "results/example2_nonconvex/nonconvex_solver_sensitivity.csv": "cbb215133df0c349f2a8402e4faf302f29c6ee0a",
+    "results/example2_nonconvex/nonconvex_terminal_sensitivity.csv": "ed6870acbe430eee69d9653bd80a406187633fe7",
+    "results/example2_nonconvex/annular_globality_summary.csv": "0100160928641c2be2cf20d4012e982f3057b965"
+  }
+}
