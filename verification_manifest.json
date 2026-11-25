@@ -211,7 +211,7 @@
   },
   "hash_method": "Git blob SHA-1 of the files stored in this release; verify with git rev-parse TAC-v9-reproducibility:<path>. The manifest itself is excluded to avoid a circular hash.",
   "source_git_blob_sha1": {
-    "example_1_convex.m": "1a20a6c51def5d3fc55b02156e1215f38e10d1d5",
+    "example_1_convex.m": "57a754ae95d93f19457b6207563bcafcdf49368b",
     "example2_nonconvex.m": "5f2990a5188ed71e5563452866225f3fb1015ecf",
     "example3_nonglobal_branch.m": "5ee792196abcb512c5ee8e61998e1b24aa7a9456",
     "main.py": "612f868c91cd146e6790f4da3f9e8efe2cfe73e6",
