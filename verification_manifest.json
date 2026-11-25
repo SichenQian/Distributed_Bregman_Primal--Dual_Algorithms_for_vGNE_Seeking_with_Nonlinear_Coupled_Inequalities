@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "release_tag": "TAC-v8-reproducibility",
-  "source_base_commit": "cbf1c5f9143d1d084742d900016d0f74688ed8a7",
+  "release_tag": "TAC-v9-reproducibility",
+  "source_base_commit": "68e626678943ce60b169acfb92ece8b853f56ad3",
   "environment": {
     "matlab": "24.1.0.2537033 (R2024a)",
     "matlab_release": "2024a",
@@ -21,133 +21,163 @@
     "nonconvex": {
       "theorem_checks": 29,
       "theorem_passed": 29,
-      "post_checks": 11,
-      "post_passed": 11,
-      "tightened_checks": 11,
-      "tightened_passed": 11,
-      "eq40_threshold": 654738.8864542497,
-      "iota": 1000000.0,
-      "gamma": 342932.9469016026,
+      "post_checks": 12,
+      "post_passed": 12,
+      "tightened_checks": 12,
+      "tightened_passed": 12,
+      "eq31_threshold": 1528.76603333076,
+      "iota": 2025.0,
+      "gamma": 2200.0,
       "lyapunov_margins": [
         {
           "Condition": "A_tilde > 0",
-          "Value": 11894.348302769622
+          "Value": 15.2919709286702
         },
         {
           "Condition": "Schur margin > 0",
-          "Value": 108241.36125566182
+          "Value": 520.23555959786
         },
         {
           "Condition": "C_tilde/delta3 > 0",
-          "Value": 74211.10453134445
+          "Value": 381.718435899412
         },
         {
           "Condition": "D_tilde/delta3^2 > 0",
-          "Value": 34902.9211436021
+          "Value": 3597.21227459455
         },
         {
           "Condition": "E_tilde > 0",
-          "Value": 0.024744478908892392
+          "Value": 0.261809616887945
         }
       ],
       "terminal_sensitivity": [
         {
           "Quantity": "x terminal Frobenius difference",
-          "AbsDifference": 2.928969502107952e-15
+          "AbsDifference": 3.72214583915569e-15
         },
         {
           "Quantity": "lambda terminal 2-norm difference",
-          "AbsDifference": 7.105427357601002e-15
+          "AbsDifference": 3.5527136788005e-15
         },
         {
           "Quantity": "omega terminal 2-norm difference",
-          "AbsDifference": 2.2803895425955863e-15
+          "AbsDifference": 1.26535691126902e-15
         },
         {
           "Quantity": "eta terminal Frobenius difference",
-          "AbsDifference": 1.2440305052138988e-11
+          "AbsDifference": 9.61481343191782e-17
         },
         {
           "Quantity": "original-constraint terminal difference",
-          "AbsDifference": 1.3322676295501878e-12
+          "AbsDifference": 9.99200722162641e-15
         },
         {
           "Quantity": "canonical-constraint terminal difference",
-          "AbsDifference": 1.3322676295501878e-12
+          "AbsDifference": 9.99200722162641e-15
         },
         {
           "Quantity": "consistency-residual terminal difference",
-          "AbsDifference": 7.935683279700884e-12
+          "AbsDifference": 2.73596124913705e-16
         },
         {
           "Quantity": "KKT-residual terminal difference",
-          "AbsDifference": 1.522543643544779e-10
+          "AbsDifference": 1.31774591850281e-13
         }
       ]
     },
-    "diagnostic": {
-      "direct_initial_state": [
-        -0.40499999999999997,
-        -0.5700000000000001,
-        4
-      ],
-      "canonical_initial_state": [
-        -0.40499999999999997,
-        -0.5700000000000001,
-        1,
-        0.33319999999999994,
-        0.495662625
-      ],
+    "nonglobal_branch_comparison": {
       "solver": "ode15s",
       "rel_tol": 2e-10,
       "abs_tol": 2e-12,
-      "max_step": 0.005,
-      "direct_terminal_x": [
-        -0.41999999851612313,
-        -0.5500000010425955
-      ],
-      "canonical_terminal_x": [
-        0.9800000000000005,
-        1.0800000000000003
-      ],
-      "direct_terminal_kkt": 2.0979102053964563e-09,
-      "canonical_terminal_kkt": 3.180924353569283e-15,
-      "direct_terminal_global_br_gap": 3.1176596001864643,
-      "canonical_terminal_global_br_gap": 0
+      "max_step": 0.02,
+      "horizon_seconds": 80.0,
+      "direct_dbpd_dist_to_x_kkt": 6.90659367837077e-12,
+      "direct_dbpd_terminal_kkt": 2.19928859927352e-10,
+      "direct_dbpd_terminal_global_br_gap": 180.164919479707,
+      "cdbpd_dist_to_x_global": 2.64731824717683e-10,
+      "cdbpd_terminal_kkt": 1.53546422887752e-07,
+      "cdbpd_terminal_consistency": 1.71752754250784e-08,
+      "cdbpd_terminal_global_br_gap": 2.55354279943276e-08,
+      "solver_sensitivity": [
+        {
+          "Quantity": "Direct DBPD terminal x 2-norm difference",
+          "AbsDifference": 5.24044084624628e-15
+        },
+        {
+          "Quantity": "Direct DBPD terminal lambda 2-norm difference",
+          "AbsDifference": 6.79674146997975e-14
+        },
+        {
+          "Quantity": "Direct DBPD terminal KKT difference",
+          "AbsDifference": 6.59128596627787e-14
+        },
+        {
+          "Quantity": "Direct DBPD terminal G_BR difference",
+          "AbsDifference": 2.8421709430404e-13
+        },
+        {
+          "Quantity": "C-DBPD terminal x 2-norm difference",
+          "AbsDifference": 0.0
+        },
+        {
+          "Quantity": "C-DBPD terminal lambda 2-norm difference",
+          "AbsDifference": 9.93013661298909e-16
+        },
+        {
+          "Quantity": "C-DBPD terminal eta 2-norm difference",
+          "AbsDifference": 2.17558392881683e-15
+        },
+        {
+          "Quantity": "C-DBPD terminal KKT difference",
+          "AbsDifference": 4.87366865394452e-15
+        },
+        {
+          "Quantity": "C-DBPD terminal consistency difference",
+          "AbsDifference": 1.7733044205172e-15
+        },
+        {
+          "Quantity": "C-DBPD terminal G_BR difference",
+          "AbsDifference": 0.0
+        }
+      ]
     },
-    "certificate_exact_double_roundtrip": true,
-    "initial_states_match_integrated_trajectories": true
+    "certificate_exact_double_roundtrip": true
   },
   "manuscript_bound_comparison": {
     "precision_decimal_digits": 60,
     "code_computed_constants": {
-      "eq40_threshold": "654738.886454249801079132828151298045606386207011586641843896",
-      "gammabar": "289760.384720920163595840462728640493855007226641141973342258",
+      "eq31_threshold": "1528.76603333076300467405450421099083235173253136523655830721",
+      "gammabar": "1912.49400889388221307668545718397539660463208517641148911259",
+      "eps6_min": "2.25527549759003352103494787733622919470398316202020081344135",
       "lyapunov_margins": [
-        "11894.3483027696221925150506493506493506493506493506493506494",
-        "108241.361255661767265826492655859154202327439063058197865466",
-        "74211.1045313444257254365508437120538525019417991007689173747",
-        "34902.9211436021027497356930118554808260696831344712923855601",
-        "0.024744478908892390949961681892294852466812616419570729459434"
+        "15.2919709286701775485361344537815126050420168067226890756303",
+        "520.235559597862251680332115721716030682920871495494890523665",
+        "381.718435899413073327650381376160898190974975872894955148297",
+        "3597.212274594553459962527137679710915754045209600000",
+        "0.261809616887942899992322508366084930596077325600"
       ]
     },
     "manuscript_upper_bounds": {
-      "eq40_threshold": "654848.977833582162792207580178889905758473206693385293819052",
-      "gammabar": "289760.385943495453946291325481200447584371675612407415829109",
+      "eq31_threshold": "1528.79058887542000960829440161489598027848808692079211386277",
+      "gammabar": "1912.49403814129581231025494399081160535784706319252838213993",
+      "eps6_min": "2.25620318322801955424686535937736529511954346075573380979323",
       "lyapunov_margins": [
-        "11894.3482177531493506493506493506493506493506493506493506494",
-        "108241.358766911775956487462191493898563828970762674271061056",
-        "74186.6398381755798908656824023623477211755529102118800284858",
-        "34902.9211436020932921417353720322500000000",
-        "0.024742969792264167832558773892697274031563845050215208034434"
+        "15.2919701702521008403361344537815126050420168067226890756303",
+        "520.235506675331760928295126907092071750776523956951403651408",
+        "381.699547018907684916696614142387707478086086984006066259408",
+        "3597.2122453087626532017843757044531250",
+        "0.26144498636559774270541600"
       ]
     },
-    "manuscript_displayed_threshold": "654900",
+    "manuscript_displayed_threshold": "1529",
     "manuscript_upper_bounds_inputs": {
-      "Lx": "1000.71",
-      "Leta": "0.004578",
-      "LGx": "0.44001",
-      "bar_rho_x": "0.120001"
+      "L_tilde_g_x": "46.33",
+      "L_tilde_g_eta_2r": "0.02557",
+      "L_G_x": "0.7463",
+      "bar_rho_x": "0.5332",
+      "l_theta_2r": "1.30",
+      "l_varphi_2r": "1.05",
+      "l_phi_2r": "1.05"
     }
   },
   "figure_exports": {
@@ -164,14 +194,13 @@
       "example2_nonconvex/nonconvex_tra",
       "example2_nonconvex/nonconvex_aux",
       "example2_nonconvex/nonconvex_exp",
-      "example2_nonconvex/nonconvex_globality"
+      "example3_nonglobal/nonconvex_globality"
     ],
-    "png_decode_checks_passed": true,
-    "visual_inspection_completed": true
+    "png_decode_checks_passed": true
   },
   "matlab_execution": {
     "exit_code": 0,
-    "completed_script_count": 2,
+    "completed_script_count": 3,
     "success_marker": "REPRODUCTION_PASS",
     "graphics_advisory_identifier": "MATLAB:print:ContentTypeImageSuggested",
     "graphics_advisory_count": 3
@@ -180,31 +209,34 @@
     "exit_code": 0,
     "success_marker": "FIGURE1_REPRODUCTION_PASS"
   },
-  "hash_method": "Git blob SHA-1 of the files stored in this release; verify with git rev-parse TAC-v8-reproducibility:<path>. The manifest itself is excluded to avoid a circular hash.",
+  "hash_method": "Git blob SHA-1 of the files stored in this release; verify with git rev-parse TAC-v9-reproducibility:<path>. The manifest itself is excluded to avoid a circular hash.",
   "source_git_blob_sha1": {
-    "example_1_convex.m": "57a754ae95d93f19457b6207563bcafcdf49368b",
-    "example2_nonconvex.m": "e7f4a16ba0da365bb72721608b055580d6583630",
+    "example_1_convex.m": "1a20a6c51def5d3fc55b02156e1215f38e10d1d5",
+    "example2_nonconvex.m": "5f2990a5188ed71e5563452866225f3fb1015ecf",
+    "example3_nonglobal_branch.m": "5ee792196abcb512c5ee8e61998e1b24aa7a9456",
     "main.py": "612f868c91cd146e6790f4da3f9e8efe2cfe73e6",
     "requirements.txt": "4db28d8cd0503125fa813da0bdcac0a9d4ffee87"
   },
   "document_git_blob_sha1": {
-    "README.md": "450d7772a5e4effe6672f765894e8ca6946800c8",
-    ".gitignore": "bb739665a41f45095e8e7ef587643eaf3e4603d3",
+    "README.md": "367abcf0cc099b77b4335aaa5ae5fcb835d90b44",
+    ".gitignore": "edb91a3e9171f3359bb8440e55f4767d37041c57",
     "LICENSE": "2d48f82a9808ef20c36c235839284e0f7d24d1e9"
   },
   "verification_record_git_blob_sha1": {
-    "reproduction_log.txt": "1d9e28010a8096a5d00d8a1cf1f508c15623294a",
-    "python_reproduction_log.txt": "d289e946b6ecd0c8b421e13f864994b005d71a3a",
+    "reproduction_log.txt": "7a0bb1c525f3ea5b479e9b6e53f96cb267850536",
+    "python_reproduction_log.txt": "bde942bcbdac862faf06999434136cf58908957a",
     "results/example1_convex/convex_theorem_audit.csv": "78050c0b75f46124ba877ac3fcae1dd09ed9234d",
     "results/example1_convex/convex_post_simulation_audit.csv": "19070bdccca8f5d33f3c22a764d1e7fbec7ef788",
     "results/example1_convex/convex_equilibrium_audit.csv": "fb4f4697828961ef60f9695635f3bf172cad0005",
-    "results/example2_nonconvex/nonconvex_theorem_audit.csv": "b44a2d70c9871c71d2dec37d5f7a5183a6462d3e",
-    "results/example2_nonconvex/nonconvex_model_constants.csv": "b64b16354df0f82b42603e0aaf0e376480dcf282",
-    "results/example2_nonconvex/table_III_certificate.txt": "a6112b475811959b260e2cdab4c6dee06cc832be",
-    "results/example2_nonconvex/globality_gap_report.txt": "995c81aac683d98afc18022ba3354b5a032fad89",
-    "results/example2_nonconvex/nonconvex_post_simulation_audit.csv": "c4003b285d430345e2fc6ebd72b4e89329b092d5",
-    "results/example2_nonconvex/nonconvex_solver_sensitivity.csv": "cbb215133df0c349f2a8402e4faf302f29c6ee0a",
-    "results/example2_nonconvex/nonconvex_terminal_sensitivity.csv": "ed6870acbe430eee69d9653bd80a406187633fe7",
-    "results/example2_nonconvex/annular_globality_summary.csv": "0100160928641c2be2cf20d4012e982f3057b965"
+    "results/example2_nonconvex/nonconvex_theorem_audit.csv": "9d07a318706d366274aeec55ed6f6a60cc069012",
+    "results/example2_nonconvex/nonconvex_model_constants.csv": "7a76dfc61fcb13948e0a51496b1b60c3c5a9528f",
+    "results/example2_nonconvex/nonconvex_equilibrium_targets.csv": "be232b568e3631cd31c15c0d33c49d9652ff1af9",
+    "results/example2_nonconvex/table_III_certificate.txt": "67848a23a05d4c44b10603ff050330e4d728aef9",
+    "results/example2_nonconvex/nonconvex_post_simulation_audit.csv": "75c269b50a75635866fe77c2649efc0c2e94e79e",
+    "results/example2_nonconvex/nonconvex_solver_sensitivity.csv": "dc616810fbea9084d9c6d4a41283a1a506e691d0",
+    "results/example2_nonconvex/nonconvex_terminal_sensitivity.csv": "03c955424b1c10db1644ea7fd97c88ce376dd523",
+    "results/example3_nonglobal/nonglobal_branch_summary.csv": "d0e8ac57b74d6ea951622e0945e08c32e8903a51",
+    "results/example3_nonglobal/nonglobal_branch_report.txt": "a4b2d72427154fea8ddbd07e399840dedaf71fd1",
+    "results/example3_nonglobal/nonglobal_solver_sensitivity.csv": "bf92a6fb7e4cd7e3e248ea84b73c6ad8a6b8f922"
   }
 }

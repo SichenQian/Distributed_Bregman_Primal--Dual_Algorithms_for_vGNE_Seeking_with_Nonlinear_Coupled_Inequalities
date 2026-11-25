@@ -1,0 +1,11 @@
+Quantity,AbsDifference
+Direct DBPD terminal x 2-norm difference,5.24044084624628e-15
+Direct DBPD terminal lambda 2-norm difference,6.79674146997975e-14
+Direct DBPD terminal KKT difference,6.59128596627787e-14
+Direct DBPD terminal G_BR difference,2.8421709430404e-13
+C-DBPD terminal x 2-norm difference,0
+C-DBPD terminal lambda 2-norm difference,9.93013661298909e-16
+C-DBPD terminal eta 2-norm difference,2.17558392881683e-15
+C-DBPD terminal KKT difference,4.87366865394452e-15
+C-DBPD terminal consistency difference,1.7733044205172e-15
+C-DBPD terminal G_BR difference,0

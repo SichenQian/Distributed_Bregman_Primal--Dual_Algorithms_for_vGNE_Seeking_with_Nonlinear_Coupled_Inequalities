@@ -52,105 +52,141 @@ Certified l_theta=2.480900 <= 2.50, l_varphi=1.001526 <= 1.10
 
 [警告: 向量化内容可能需要很长时间才能创建，或者可能包含意外结果。将 'ContentType' 设置为 'image' 以提高性能。<a href="matlab:warning('off', 'MATLAB:print:ContentTypeImageSuggested')">点击此处</a>以不再显示此消息。] 
 [警告: 向量化内容可能需要很长时间才能创建，或者可能包含意外结果。将 'ContentType' 设置为 'image' 以提高性能。<a href="matlab:warning('off', 'MATLAB:print:ContentTypeImageSuggested')">点击此处</a>以不再显示此消息。] 
-Completed. Results: D:\Codex\2026-10-12\https-github-com-sichenqian-distributed-bregman\work\repository\results\example1_convex
-Table-III certificate: core 7.351102926468e+04 > 3.600005123282e+03; eps5=2.750000000000e-04 in (5.001250322585e-05, 1.021240376704e-03); eps4_min=1.528244745186e-04; sigma_max=5.600000000000e-04; eps6_min=7.444715969147e+00; komega_min=4.622176870656e+03
-delta3=2.250000000000e-09, delta4=9.315000000000e-14, varrho2=2.250000167670e-06, gammabar=2.897603847209e+05, iota_req=6.547388864542e+05
-Lyapunov margins: A=1.189434830277e+04, Schur=1.082413612557e+05, C/d3=7.421110453134e+04, D/d3^2=3.490292114360e+04, E=2.474447890889e-02
-EXAMPLE 2: COMPOSITE NONCONVEX CONSTRAINT
+Completed. Results: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\example1_convex
+Table-III certificate: core 8.024000000000e+02 > 1.637044681044e+02; eps5=6.800000000000e-03 in (2.492522432702e-03, 1.221713752324e-02); eps4_min=9.837052124803e-02; sigma_max=2.800000000000e-01; eps6_min=2.255275497590e+00; komega_min=4.679954081540e+03
+gamma0_nc=1.912204739711e+03, gammabar=1.912494008894e+03, gamma=2.200000000000e+03; delta3=3.600000000000e-06, delta4=7.905600000000e-08, varrho2=1.620830088000e-04, iota_req=1.528766033331e+03 (iota=2.025000000000e+03)
+Lyapunov margins: A=1.529197092867e+01, Schur=5.202355595979e+02, C/d3=3.817184358994e+02, D/d3^2=3.597212274595e+03, E=2.618096168879e-01, lam_min(M)=4.661987107875e-08
+EXAMPLE 2: STRUCTURED COMPOSITE NONCONVEX CONSTRAINT
 Graph: fixed 4-regular graph with 10 nodes
 lambda_2(L)=2.533268196029, ||L||_2=6.466731803971
-Target multiplier lambda^*=25.0000
-Integration horizon T=30.0.
-Initial action ranges: x_1 [-0.6497,+0.6505], x_2 [-1.4232,+1.4254]
-Heterogeneous target spans: x_1 1.300, x_2 2.850; initial original G(x)=9.858881e-06
-Target ||omega^*||=0.002359, 1^T omega^*=-6.505e-19
-W_2(0)=1.156960299473e-05, r_2=1.180099505463e-05, 2r_2=2.360199010925e-05
-Certified on K_{2,2r_2}: l_theta=1.229067397 <= 4.50, l_varphi=1.000000076 <= 1.80, l_phi=1.603261230 <= 1.80
-Whole-domain L_tilde_g_x=1000.70015, L_tilde_g_eta=0.00457726678, L_G_x=0.4400032
-Original-constraint Hessian test: minimum eigenvalue -6.591968e-01<0
-                        Condition                          Value         Lower         Upper        Margin      Pass 
-    _________________________________________________    __________    __________    _________    __________    _____
+Target multiplier lambda^*=12.0000 in Lambda=[0, 24.0000]
+Integration horizon T=10.0 s.
+Initial action ranges: x_1 [-0.6471,+0.6535], x_2 [-1.4210,+1.4259]
+Initial multiplier range: [11.9950, 12.0039]
+Initial canonical ranges: eta_1 [499.9950, 500.0039], eta_2 [-0.0030, +0.0027]
+Initial opponent estimate ranges: x^i_{j,1} [-0.65099, +0.65100], x^i_{j,2} [-1.42651, +1.42653]
+Initial g_Sigma(x(0))=6.750940e-01, tilde_g_Sigma(x(0),eta(0))=6.750505e-01
+Target ||omega^*||=0.011795, 1^T omega^*=-3.469e-18
+W_2(0)=3.178895783951e-04, r_2=3.337840573148e-04, 2r_2=6.675681146296e-04
+Certified on K_{2,2r_2}: l_theta=1.252780425 <= 1.30, l_varphi=1.000009272 <= 1.05, l_phi=1.014945429 <= 1.05
+Uniform bounds: L_tilde_g_x=46.3253184, L_G_x=0.746250007, bar_rho_x=0.533112695, bar_rho=1.34572645, bar_Phi_star=5.27283394
+Regional bounds on K_{2,2r_2}: R_x_2r=0.036539516, R_eta_2r=0.036539516, L_tilde_g_eta_2r=0.0255695992
+Original-constraint Hessian witness at u=(0,pi/(2k)): min eigenvalue -1.153740e+00 < 0
+Target KKT residual = 2.060e-13, canonical consistency = 0.000e+00, Slater margin = 22.493143
+                             Condition                               Value         Lower        Upper       Margin     Pass 
+    ___________________________________________________________    __________    __________    ________    ________    _____
 
-    "graph algebraic connectivity"                           2.5333             0          Inf             1    true 
-    "uniform canonical Slater margin"                            10             0          Inf             1    true 
-    "target interior margin"                                   0.01             0          Inf             1    true 
-    "target KKT construction margin"                     7.5908e-11             0          Inf             1    true 
-    "Delta subset int(E_plus): canonical curvature"             0.2           0.2          Inf    1.5997e-05    true 
-    "negative original-constraint Hessian eigenvalue"        0.6592             0          Inf             1    true 
-    "Bregman sublevel r2 > W2(0)"                        1.1801e-05     1.157e-05          Inf      0.019608    true 
-    "regional l_theta <= 4.5"                                1.2291             0          4.5       0.72687    true 
-    "regional l_varphi <= 1.8"                                    1             0          1.8       0.44444    true 
-    "regional l_phi <= 1.8"                                  1.6033             0          1.8        0.1093    true 
-    "core small gain: mu_c*d_eta > N*c_eta"                   73511          3600          Inf       0.95103    true 
-    "epsilon5 interval"                                    0.000275    5.0013e-05    0.0010212       0.73072    true 
-    "epsilon4 > 5N/(2mu5)"                                  0.00056    0.00015282          Inf        0.7271    true 
-    "sigma admissible interval"                             0.00011             0      0.00056       0.80357    true 
-    "epsilon6 > 2/e0"                                           8.2        7.4447          Inf      0.092108    true 
-    "komega > bomega/lambda2"                                 18400        4622.2          Inf       0.74879    true 
-    "delta3 condition 1"                                      11894             0          Inf             1    true 
-    "delta3 condition 2"                                   0.024744             0          Inf             1    true 
-    "delta3 condition 3"                                      34903             0          Inf             1    true 
-    "delta4 = komega*delta3^2"                                    0          -Inf        1e-24             1    true 
-    "varrho2 < 1/3"                                        2.25e-06             0      0.33333       0.99999    true 
-    "gamma > gammabar"                                   3.4293e+05    2.8976e+05          Inf       0.15505    true 
-    "iota > Eq.(40) threshold"                                1e+06    6.5474e+05          Inf       0.34526    true 
-    "A_tilde > 0"                                             11894             0          Inf             1    true 
-    "Schur margin > 0"                                   1.0824e+05             0          Inf             1    true 
-    "C_tilde/delta3 > 0"                                      74211             0          Inf             1    true 
-    "D_tilde/delta3^2 > 0"                                    34903             0          Inf             1    true 
-    "E_tilde > 0"                                          0.024744             0          Inf             1    true 
-    "lambda_min(M_tilde) > 0"                             1.767e-13             0          Inf             1    true 
+    "graph algebraic connectivity"                                     2.5333             0         Inf           1    true 
+    "uniform canonical Slater margin"                                  22.493             0         Inf           1    true 
+    "target interior margin"                                              0.3             0         Inf           1    true 
+    "target KKT construction margin"                               9.9794e-11             0         Inf           1    true 
+    "Delta subset int(E_plus): canonical curvature"                   0.25375           0.2         Inf     0.21182    true 
+    "negative original-constraint Hessian eigenvalue"                  1.1537             0         Inf           1    true 
+    "Bregman sublevel r2 > W2(0)"                                  0.00033378    0.00031789         Inf    0.047619    true 
+    "regional l_theta <= 1.30"                                         1.2528             0         1.3    0.036323    true 
+    "regional l_varphi <= 1.05"                                             1             0        1.05     0.04761    true 
+    "regional l_phi <= 1.05"                                           1.0149             0        1.05    0.033385    true 
+    "core small gain (12): mu_c*d_eta > c_eta"                          802.4         163.7         Inf     0.79598    true 
+    "epsilon5 in (1/mu_c, d_eta/c_eta)"                                0.0068     0.0024925    0.012217      0.4434    true 
+    "epsilon4 > 5N/(2mu5)"                                               0.28      0.098371         Inf     0.64868    true 
+    "sigma in (0, min{1,eps4,mu4/(0.5*mu_G*lam_Sigma+1/eps5)})"          0.08             0        0.28     0.71429    true 
+    "epsilon6 > 2/e0"                                                     3.2        2.2553         Inf     0.29523    true 
+    "komega > bomega/lambda2"                                            6100          4680         Inf     0.23279    true 
+    "delta3 condition 1 (Eq. 30)"                                      15.292             0         Inf           1    true 
+    "delta3 condition 2 (Eq. 30)"                                     0.26181             0         Inf           1    true 
+    "delta3 condition 3 (Eq. 30)"                                      3597.2             0         Inf           1    true 
+    "delta4 = komega*delta3^2"                                              0          -Inf       1e-24           1    true 
+    "varrho2 < 1/3 (Eq. 30)"                                       0.00016208             0     0.33333     0.99951    true 
+    "gamma > gammabar(delta3)"                                           2200        1912.5         Inf     0.13068    true 
+    "iota > Eq. (31) threshold"                                          2025        1528.8         Inf     0.24505    true 
+    "A_tilde > 0"                                                      15.292             0         Inf           1    true 
+    "Schur margin > 0"                                                 520.24             0         Inf           1    true 
+    "C_tilde/delta3 > 0"                                               381.72             0         Inf           1    true 
+    "D_tilde/delta3^2 > 0"                                             3597.2             0         Inf           1    true 
+    "E_tilde > 0"                                                     0.26181             0         Inf           1    true 
+    "lambda_min(M_tilde) > 0"                                       4.662e-08             0         Inf           1    true 
 
+                          Check                            Value       Tolerance     Pass 
+    _________________________________________________    __________    __________    _____
 
-HETEROGENEOUS ANNULAR GLOBALITY DIAGNOSTIC
-Reference vector: [2.9400, 2.6518].
-Expected nonglobal branch: [-0.4200, -0.5500].
-Expected global branch:   [0.9800, 1.0800].
-Exact unilateral gap at the nonglobal branch: 3.117660.
-Direct terminal: KKT 2.098e-09, gap 3.117660, x=[-0.420000 -0.550000].
-Canonical terminal: KKT 3.181e-15, gap 0.000e+00, x=[0.980000 1.080000].
-                          Check                            Value       Tolerance    Pass 
-    _________________________________________________    __________    _________    _____
+    "terminal normalized total error"                    9.6673e-10         1e-09    true 
+    "terminal estimate disagreement"                     1.9701e-14         1e-10    true 
+    "terminal multiplier disagreement"                   1.1472e-11         1e-09    true 
+    "terminal active original constraint"                2.4987e-14         1e-10    true 
+    "terminal active canonical constraint"               2.4987e-14         1e-10    true 
+    "terminal canonical consistency"                     2.5891e-11         1e-09    true 
+    "terminal KKT residual"                              5.1069e-11         1e-07    true 
+    "positive fitted exponential rate"                        1.991             0    true 
+    "zero-sum omega invariant"                                    0         1e-12    true 
+    "terminal omega-target residual"                     2.6112e-11         1e-09    true 
+    "confinement max W2(t) <= 2*r2"                      0.00031789    0.00066757    true 
+    "negative original-constraint Hessian eigenvalue"        1.1537             0    true 
 
-    "proposed terminal normalized total error"           1.5468e-07      3e-05      true 
-    "proposed terminal estimate disagreement"            6.4533e-15      3e-05      true 
-    "proposed multiplier disagreement"                            0      3e-05      true 
-    "proposed active original constraint"                8.8818e-13      3e-05      true 
-    "proposed active canonical constraint"               8.8818e-13      3e-05      true 
-    "proposed canonical consistency"                     2.9679e-09      2e-06      true 
-    "proposed terminal KKT residual"                     4.4535e-10       0.04      true 
-    "proposed positive fitted exponential rate"             0.38017          0      true 
-    "zero-sum omega invariant"                                    0      2e-08      true 
-    "terminal omega-target residual"                     2.6297e-14      2e-05      true 
-    "negative original-constraint Hessian eigenvalue"        0.6592          0      true 
+                          Check                           Baseline     Tightened     AbsDifference    Tolerance     BaselinePass    TightenedPass
+    _________________________________________________    __________    __________    _____________    __________    ____________    _____________
 
-                          Check                           Baseline     Tightened     AbsDifference    Tolerance    BaselinePass    TightenedPass
-    _________________________________________________    __________    __________    _____________    _________    ____________    _____________
-
-    "proposed terminal normalized total error"           1.5468e-07    1.5426e-07     4.1353e-10        3e-05         true             true     
-    "proposed terminal estimate disagreement"            6.4533e-15    4.7369e-15     1.7164e-15        3e-05         true             true     
-    "proposed multiplier disagreement"                            0    7.1054e-15     7.1054e-15        3e-05         true             true     
-    "proposed active original constraint"                8.8818e-13    4.4409e-13     4.4409e-13        3e-05         true             true     
-    "proposed active canonical constraint"               8.8818e-13    4.4409e-13     4.4409e-13        3e-05         true             true     
-    "proposed canonical consistency"                     2.9679e-09      2.96e-09     7.9357e-12        2e-06         true             true     
-    "proposed terminal KKT residual"                     4.4535e-10     2.931e-10     1.5225e-10         0.04         true             true     
-    "proposed positive fitted exponential rate"             0.38017       0.38039     0.00021998            0         true             true     
-    "zero-sum omega invariant"                                    0             0              0        2e-08         true             true     
-    "terminal omega-target residual"                     2.6297e-14    2.6932e-14       6.35e-16        2e-05         true             true     
-    "negative original-constraint Hessian eigenvalue"        0.6592        0.6592              0            0         true             true     
+    "terminal normalized total error"                    9.6673e-10     9.667e-10     3.4324e-14           1e-09       true             true     
+    "terminal estimate disagreement"                     1.9701e-14    1.8516e-14     1.1855e-15           1e-10       true             true     
+    "terminal multiplier disagreement"                   1.1472e-11    1.1472e-11              0           1e-09       true             true     
+    "terminal active original constraint"                2.4987e-14    3.4979e-14      9.992e-15           1e-10       true             true     
+    "terminal active canonical constraint"               2.4987e-14    3.4979e-14      9.992e-15           1e-10       true             true     
+    "terminal canonical consistency"                     2.5891e-11     2.589e-11      2.736e-16           1e-09       true             true     
+    "terminal KKT residual"                              5.1069e-11    5.1201e-11     1.3177e-13           1e-07       true             true     
+    "positive fitted exponential rate"                        1.991         1.991      2.285e-07               0       true             true     
+    "zero-sum omega invariant"                                    0             0              0           1e-12       true             true     
+    "terminal omega-target residual"                     2.6112e-11    2.6111e-11       6.69e-16           1e-09       true             true     
+    "confinement max W2(t) <= 2*r2"                      0.00031789    0.00031789              0      0.00066757       true             true     
+    "negative original-constraint Hessian eigenvalue"        1.1537        1.1537              0               0       true             true     
 
                      Quantity                     AbsDifference
     __________________________________________    _____________
 
-    "x terminal Frobenius difference"               2.929e-15  
-    "lambda terminal 2-norm difference"            7.1054e-15  
-    "omega terminal 2-norm difference"             2.2804e-15  
-    "eta terminal Frobenius difference"             1.244e-11  
-    "original-constraint terminal difference"      1.3323e-12  
-    "canonical-constraint terminal difference"     1.3323e-12  
-    "consistency-residual terminal difference"     7.9357e-12  
-    "KKT-residual terminal difference"             1.5225e-10  
+    "x terminal Frobenius difference"              3.7221e-15  
+    "lambda terminal 2-norm difference"            3.5527e-15  
+    "omega terminal 2-norm difference"             1.2654e-15  
+    "eta terminal Frobenius difference"            9.6148e-17  
+    "original-constraint terminal difference"       9.992e-15  
+    "canonical-constraint terminal difference"      9.992e-15  
+    "consistency-residual terminal difference"      2.736e-16  
+    "KKT-residual terminal difference"             1.3177e-13  
 
 [警告: 向量化内容可能需要很长时间才能创建，或者可能包含意外结果。将 'ContentType' 设置为 'image' 以提高性能。<a href="matlab:warning('off', 'MATLAB:print:ContentTypeImageSuggested')">点击此处</a>以不再显示此消息。] 
-Completed. Results: D:\Codex\2026-10-12\https-github-com-sichenqian-distributed-bregman\work\repository\results\example2_nonconvex
+Completed. Results: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\example2_nonconvex
+EXAMPLE 3: DISTRIBUTED GLOBAL RECOVERY VS. NONGLOBAL KKT BRANCH
+4-agent coupled game on 4-cycle: lambda_2(L)=2.0000, ||L||=4.0000
+Global vGNE x^circ = [1.32, 1.42, 1.50, 1.36], lambda^circ = 3.00
+Nonglobal KKT x_KKT = [-0.74, -0.82, -0.88, -0.78], lambda_KKT = 9.00
+q = [12.654214, 16.830143, 17.863736, 16.274166]
+r = [4.300135, 4.482895, 4.671884, 4.310007]
+eta^circ = [4.779200, 6.048000, 6.271300, 5.895700] in Delta_i = [1.00, 11.00]
+Uniform canonical Slater margin at xhat=0: 13.062704 > 0
+Global VI test at x_KKT: <F(x_KKT), x^circ - x_KKT> = -744.661657 < 0
+Exact unilateral global BR gap: at x_KKT = 180.164919, at x^circ = 0.000e+00
+Exact KKT residuals: global = 2.165e-14, local = 4.441e-14
+
+--- TERMINAL COMPARISON (T = 80.0 s, IDENTICAL INITIALIZATION) ---
+Direct DBPD (5):     x=[-0.740000 -0.820000 -0.880000 -0.780000], ||x-x_KKT||=6.907e-12, ||lam-lam_KKT||=1.028e-10, KKT=2.199e-10, G_BR=180.164919, max|1^T om|=0.00e+00
+Proposed C-DBPD (11): x=[+1.320000 +1.420000 +1.500000 +1.360000], ||x-x^circ||=2.647e-10, ||lam-lam^circ||=1.303e-08, KKT=1.535e-07, e_c=1.718e-08, G_BR=2.554e-08, max|1^T om|=0.00e+00
+Solver sensitivity (baseline vs tightened): direct ||dx||=5.240e-15, C-DBPD ||dx||=0.000e+00
+                       Quantity                        AbsDifference
+    _______________________________________________    _____________
+
+    "Direct DBPD terminal x 2-norm difference"          5.2404e-15  
+    "Direct DBPD terminal lambda 2-norm difference"     6.7967e-14  
+    "Direct DBPD terminal KKT difference"               6.5913e-14  
+    "Direct DBPD terminal G_BR difference"              2.8422e-13  
+    "C-DBPD terminal x 2-norm difference"                        0  
+    "C-DBPD terminal lambda 2-norm difference"          9.9301e-16  
+    "C-DBPD terminal eta 2-norm difference"             2.1756e-15  
+    "C-DBPD terminal KKT difference"                    4.8737e-15  
+    "C-DBPD terminal consistency difference"            1.7733e-15  
+    "C-DBPD terminal G_BR difference"                            0  
+
+          Algorithm           DistToBranch    TerminalKKT    TerminalConstraint    TerminalConsistency    TerminalGlobalBRGap    MaxZeroSumOmega
+    ______________________    ____________    ___________    __________________    ___________________    ___________________    _______________
+
+    "Direct DBPD (5)"          6.9066e-12     2.1993e-10        -2.0266e-12                   NaN                 180.16                0       
+    "Proposed C-DBPD (11)"     2.6473e-10     1.5355e-07        -8.5118e-09            1.7175e-08             2.5535e-08                0       
+
+Completed. Results: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\example3_nonglobal
 REPRODUCTION_PASS

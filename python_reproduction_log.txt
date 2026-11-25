@@ -4,10 +4,10 @@ Platform: Windows-11-10.0.26300-SP0
 NumPy: 2.5.2
 Matplotlib: 3.11.1
 Command: python main.py
-Saved: D:\Codex\2026-10-12\https-github-com-sichenqian-distributed-bregman\work\repository\results\figure1\convex_case.eps
-Saved: D:\Codex\2026-10-12\https-github-com-sichenqian-distributed-bregman\work\repository\results\figure1\convex_case.png
-Saved: D:\Codex\2026-10-12\https-github-com-sichenqian-distributed-bregman\work\repository\results\figure1\nonconvex_case.eps
-Saved: D:\Codex\2026-10-12\https-github-com-sichenqian-distributed-bregman\work\repository\results\figure1\nonconvex_case.png
+Saved: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\figure1\convex_case.eps
+Saved: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\figure1\convex_case.png
+Saved: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\figure1\nonconvex_case.eps
+Saved: C:\Users\qiansichen\.gemini\antigravity\brain\b0518d55-0565-4d80-b696-e65389552fbd\scratch\repo\results\figure1\nonconvex_case.png
 Exit code: 0
 Generated: results/figure1/convex_case.eps (222655 bytes)
 Generated: results/figure1/convex_case.png (1257979 bytes)

@@ -1,12 +1,13 @@
 Check,Value,Tolerance,Pass
-proposed terminal normalized total error,1.54676847587769e-07,3e-05,1
-proposed terminal estimate disagreement,6.45330563040857e-15,3e-05,1
-proposed multiplier disagreement,0,3e-05,1
-proposed active original constraint,8.88178419700125e-13,3e-05,1
-proposed active canonical constraint,8.88178419700125e-13,3e-05,1
-proposed canonical consistency,2.9678868798477e-09,2e-06,1
-proposed terminal KKT residual,4.45351333834324e-10,0.04,1
-proposed positive fitted exponential rate,0.38016509684039,0,1
-zero-sum omega invariant,0,2e-08,1
-terminal omega-target residual,2.62974626308383e-14,2e-05,1
-negative original-constraint Hessian eigenvalue,0.6591968,0,1
+terminal normalized total error,9.66732458133562e-10,1e-09,1
+terminal estimate disagreement,1.97012978197913e-14,1e-10,1
+terminal multiplier disagreement,1.14717124688468e-11,1e-09,1
+terminal active original constraint,2.49869569479699e-14,1e-10,1
+terminal active canonical constraint,2.49869569479699e-14,1e-10,1
+terminal canonical consistency,2.58905306026406e-11,1e-09,1
+terminal KKT residual,5.10693402690757e-11,1e-07,1
+positive fitted exponential rate,1.99104472944272,0,1
+zero-sum omega invariant,0,1e-12,1
+terminal omega-target residual,2.61121003683492e-11,1e-09,1
+confinement max W2(t) <= 2*r2,0.000317889578386917,0.000667568114629608,1
+negative original-constraint Hessian eigenvalue,1.15374031823969,0,1

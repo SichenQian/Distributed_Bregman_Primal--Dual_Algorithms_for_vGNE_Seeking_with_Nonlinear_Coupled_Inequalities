@@ -1,7 +1,7 @@
 Table III numerical certificate
 MATLAB version: 24.1.0.2537033 (R2024a)
-gamma = 342932.94690160261
-iota  = 1000000
+gamma = 2200
+iota  = 2025
 
 graph algebraic connectivity
   value = 2.5332681960292853
@@ -11,126 +11,126 @@ graph algebraic connectivity
   pass  = 1
 
 uniform canonical Slater margin
-  value = 9.999998399977148
+  value = 22.493142837453128
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 target interior margin
-  value = 0.01
+  value = 0.29999999999999999
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 target KKT construction margin
-  value = 7.5907902396702823e-11
+  value = 9.9793952415154058e-11
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 Delta subset int(E_plus): canonical curvature
-  value = 0.20000319954544998
+  value = 0.25375000000000003
   lower = 0.20000000000000001
   upper = Inf
-  margin = 1.5997471326678288e-05
+  margin = 0.21182266009852221
   pass  = 1
 
 negative original-constraint Hessian eigenvalue
-  value = 0.65919679999999969
+  value = 1.1537403182396866
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 Bregman sublevel r2 > W2(0)
-  value = 1.1800995054625682e-05
-  lower = 1.156960299473106e-05
+  value = 0.00033378405731480395
+  lower = 0.00031788957839505138
   upper = Inf
-  margin = 0.019607843137254961
+  margin = 0.047619047619047603
   pass  = 1
 
-regional l_theta <= 4.5
-  value = 1.2290673965706926
+regional l_theta <= 1.30
+  value = 1.252780425416415
   lower = 0
-  upper = 4.5
-  margin = 0.72687391187317951
+  upper = 1.3
+  margin = 0.036322749679680813
   pass  = 1
 
-regional l_varphi <= 1.8
-  value = 1.0000000755263712
+regional l_varphi <= 1.05
+  value = 1.0000092718223528
   lower = 0
-  upper = 1.8
-  margin = 0.44444440248534939
+  upper = 1.05
+  margin = 0.047610217312045018
   pass  = 1
 
-regional l_phi <= 1.8
-  value = 1.6032612295871336
+regional l_phi <= 1.05
+  value = 1.0149454294825075
   lower = 0
-  upper = 1.8
-  margin = 0.10929931689603692
+  upper = 1.05
+  margin = 0.033385305254754763
   pass  = 1
 
-core small gain: mu_c*d_eta > N*c_eta
-  value = 73511.029264684999
-  lower = 3600.0051232817009
+core small gain (12): mu_c*d_eta > c_eta
+  value = 802.39999999999998
+  lower = 163.70446810436076
   upper = Inf
-  margin = 0.9510276871471971
+  margin = 0.79598147045817447
   pass  = 1
 
-epsilon5 interval
-  value = 0.00027500000000000002
-  lower = 5.001250322584568e-05
-  upper = 0.0010212403767036555
-  margin = 0.7307196167785287
+epsilon5 in (1/mu_c, d_eta/c_eta)
+  value = 0.0067999999999999996
+  lower = 0.0024925224327018943
+  upper = 0.01221713752324103
+  margin = 0.44340480844517349
   pass  = 1
 
 epsilon4 > 5N/(2mu5)
-  value = 0.00055999999999999995
-  lower = 0.00015282447451861581
+  value = 0.28000000000000003
+  lower = 0.098370521248032597
   upper = Inf
-  margin = 0.72709915264532898
+  margin = 0.64867670982845504
   pass  = 1
 
-sigma admissible interval
-  value = 0.00011
+sigma in (0, min{1,eps4,mu4/(0.5*mu_G*lam_Sigma+1/eps5)})
+  value = 0.080000000000000002
   lower = 0
-  upper = 0.00055999999999999995
-  margin = 0.80357142857142849
+  upper = 0.28000000000000003
+  margin = 0.7142857142857143
   pass  = 1
 
 epsilon6 > 2/e0
-  value = 8.1999999999999993
-  lower = 7.4447159691468769
+  value = 3.2000000000000002
+  lower = 2.2552754975900289
   upper = Inf
-  margin = 0.092107808640624678
+  margin = 0.29522640700311603
   pass  = 1
 
 komega > bomega/lambda2
-  value = 18400
-  lower = 4622.1768706564544
+  value = 6100
+  lower = 4679.9540815396604
   upper = Inf
-  margin = 0.74879473529041007
+  margin = 0.23279441286235075
   pass  = 1
 
-delta3 condition 1
-  value = 11894.348302769624
+delta3 condition 1 (Eq. 30)
+  value = 15.291970928670176
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
-delta3 condition 2
-  value = 0.024744478908892392
+delta3 condition 2 (Eq. 30)
+  value = 0.2618096168879448
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
-delta3 condition 3
-  value = 34902.9211436021
+delta3 condition 3 (Eq. 30)
+  value = 3597.2122745945458
   lower = 0
   upper = Inf
   margin = 1
@@ -143,64 +143,64 @@ delta4 = komega*delta3^2
   margin = 1
   pass  = 1
 
-varrho2 < 1/3
-  value = 2.25000016767e-06
+varrho2 < 1/3 (Eq. 30)
+  value = 0.00016208300879999997
   lower = 0
   upper = 0.33333333333333331
-  margin = 0.9999932499994969
+  margin = 0.99951375097359996
   pass  = 1
 
-gamma > gammabar
-  value = 342932.94690160261
-  lower = 289760.38472092018
+gamma > gammabar(delta3)
+  value = 2200
+  lower = 1912.4940088938831
   upper = Inf
-  margin = 0.15505235837237646
+  margin = 0.1306845414118713
   pass  = 1
 
-iota > Eq.(40) threshold
-  value = 1000000
-  lower = 654738.88645424973
+iota > Eq. (31) threshold
+  value = 2025
+  lower = 1528.7660333307642
   upper = Inf
-  margin = 0.34526111354575029
+  margin = 0.24505381070085716
   pass  = 1
 
 A_tilde > 0
-  value = 11894.348302769622
+  value = 15.291970928670176
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 Schur margin > 0
-  value = 108241.36125566182
+  value = 520.23555959785995
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 C_tilde/delta3 > 0
-  value = 74211.104531344448
+  value = 381.71843589941216
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 D_tilde/delta3^2 > 0
-  value = 34902.9211436021
+  value = 3597.2122745945467
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 E_tilde > 0
-  value = 0.024744478908892392
+  value = 0.2618096168879448
   lower = 0
   upper = Inf
   margin = 1
   pass  = 1
 
 lambda_min(M_tilde) > 0
-  value = 1.7669603828948564e-13
+  value = 4.6619871078745316e-08
   lower = 0
   upper = Inf
   margin = 1
