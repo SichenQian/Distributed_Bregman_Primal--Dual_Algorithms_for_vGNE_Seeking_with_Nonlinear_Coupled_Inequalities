@@ -9,21 +9,14 @@ Sichen Qian, Hongzhe Liu, Wenwu Yu, and Wei Xing Zheng.
 
 ## Numerical examples
 
-| Script | Example | Figures in the manuscript |
+| Script | Example | Manuscript items |
 | --- | --- | --- |
-| `main.py` | Feasible sets, potential contours, and equilibrium points for the two-player convex and nonconvex examples | Fig. 1 |
-| `example_1_convex.m` | Ten-agent game with a convex coupled inequality | Figs. 2–5 |
-| `example2_nonconvex.m` | Ten-agent game with a structured composite nonconvex coupled inequality, plus a separate two-player annular diagnostic | Figs. 6–9 |
+| `main.py` | Two-player convex and structured composite nonconvex feasible sets, potential contours, and equilibrium points | Fig. 1 |
+| `example_1_convex.m` | Ten-agent edge-server regulation game with a convex nonlinear coupled inequality | Figs. 2–5, Table II |
+| `example2_nonconvex.m` | Ten-agent edge-server regulation game with a structured composite nonconvex coupled inequality | Figs. 6–8, Table III |
+| `example3_nonglobal_branch.m` | Four-agent coupled game over a four-cycle contrasting direct DBPD and C-DBPD from identical initialization near a nonglobal KKT branch | Fig. 9 |
 
-Both MATLAB scripts are self-contained. Model parameters, communication graphs,
-equilibrium targets, and deterministic initial conditions are defined in the
-scripts. Numerical checks of the theorem inequalities run before integration.
-
-The two-player diagnostic in the nonconvex script compares stationary and
-global equilibrium branches using a unilateral global best-response gap.
-Both flows start from the same primal profile, with different multiplier and
-canonical-state initializations. This diagnostic is separate from the
-ten-agent theorem certificate.
+All three MATLAB scripts are self-contained. Model parameters, communication graphs, equilibrium targets, and deterministic initializations are defined inside each script. Required theorem inequalities and post-simulation residual checks are enforced via assertions.
 
 ## Requirements
 
@@ -32,8 +25,7 @@ ten-agent theorem certificate.
 - Python **3.12 or later**; validated with **3.13.15**.
 - NumPy and Matplotlib, with versions specified in `requirements.txt`.
 
-The default Python run uses Matplotlib's built-in mathematical text rendering
-and bundled STIX fonts. No external LaTeX installation is required.
+The default Python run uses Matplotlib's built-in mathematical text rendering and bundled STIX fonts, so no external LaTeX installation is required.
 
 ### MATLAB
 
@@ -51,8 +43,7 @@ python -m pip install -r requirements.txt
 python main.py
 ```
 
-The script saves the two panels as `convex_case.eps`, `convex_case.png`,
-`nonconvex_case.eps`, and `nonconvex_case.png` in `results/figure1/`.
+The script saves the two panels as `convex_case.eps`, `convex_case.png`, `nonconvex_case.eps`, and `nonconvex_case.png` in `results/figure1/`.
 
 An alternative output folder can be selected with `--output-dir`:
 
@@ -66,119 +57,86 @@ For the manuscript's LaTeX font configuration, use:
 python main.py --usetex
 ```
 
-This optional mode requires `latex`, `dvips`, and `dvipng` on `PATH`, together
-with the LaTeX packages `amsmath`, `amssymb`, `newtxtext`, and `newtxmath`.
-Ghostscript is used for EPS distillation when available. See the
-[Matplotlib LaTeX rendering documentation](https://matplotlib.org/stable/users/explain/text/usetex.html).
+This optional mode requires `latex`, `dvips`, and `dvipng` on `PATH`, together with the LaTeX packages `amsmath`, `amssymb`, `newtxtext`, and `newtxmath`. Ghostscript is used for EPS distillation when available. See the [Matplotlib LaTeX rendering documentation](https://matplotlib.org/stable/users/explain/text/usetex.html).
 
 ### MATLAB: Figs. 2–9
 
-Open either MATLAB script and click **Run**, or execute the following
-commands from the folder containing the scripts:
+Open any of the MATLAB scripts and click **Run**, or execute the following commands from the repository folder:
 
 ```matlab
 example_1_convex
 example2_nonconvex
+example3_nonglobal_branch
 ```
 
-The MATLAB scripts can also be run from another folder using MATLAB's `run`
-function with the script's location. All three programs save their default
-outputs relative to their own location, so no output paths need to be edited:
+All four programs save their default outputs relative to their own location, so no output paths need to be edited:
 
 ```text
 results/
   figure1/
   example1_convex/
   example2_nonconvex/
+  example3_nonglobal/
 ```
 
-Running a program again overwrites its corresponding output files. Results
-from the Python figure and the MATLAB examples are stored in separate folders.
+Running a program again overwrites only its corresponding output folder.
 
 ## Outputs
 
-Each MATLAB script saves figures in `.fig`, `.png`, and `.eps` formats, CSV tables
-of numerical checks and equilibrium data, and a MAT file containing model
-parameters, initialization, trajectories, and numerical metrics:
+Each MATLAB script exports figures in `.fig`, `.png`, and `.eps` formats, CSV audit tables, and a MAT file containing model parameters, initialization, trajectories, and numerical metrics:
 
 - `results/example1_convex/convex_run_data.mat`
 - `results/example2_nonconvex/nonconvex_run_data.mat`
+- `results/example3_nonglobal/nonglobal_run_data.mat`
 
-The nonconvex script also runs a second simulation with tighter solver
-tolerances and a smaller maximum step size. It saves solver-sensitivity
-tables, an annular-diagnostic summary, and `globality_gap_report.txt`.
-
-The scripts stop with an assertion error if a required check fails.
+Both `example2_nonconvex.m` and `example3_nonglobal_branch.m` also execute a second integration under tightened solver tolerances and a halved maximum step size, saving solver-sensitivity comparison tables alongside the baseline outputs. Every script terminates with an assertion error if any required check fails.
 
 ## Figure correspondence
 
-The Python panels are exported as `.eps` and `.png`; MATLAB figures are
-exported as `.fig`, `.png`, and `.eps`:
+The Python panels are exported as `.eps` and `.png`; the MATLAB figures are exported as `.fig`, `.png`, and `.eps`:
 
 | Figure | Output folder | File stem | Content |
 | --- | --- | --- | --- |
-| Fig. 1(a) | `results/figure1/` | `convex_case` | Convex feasible set, potential contours, and vGNE |
-| Fig. 1(b) | `results/figure1/` | `nonconvex_case` | Nonconvex feasible set, potential contours, global vGNE, and nonglobal KKT point |
-| Fig. 2 | `results/example1_convex/` | `shared_topology` | Shared communication graph |
-| Fig. 3 | `results/example1_convex/` | `convex_tra` | Primal and decision-estimate errors |
-| Fig. 4 | `results/example1_convex/` | `convex_aux` | Multipliers and auxiliary states |
-| Fig. 5 | `results/example1_convex/` | `convex_exp` | Normalized logarithmic error and shared-constraint residual |
-| Fig. 6 | `results/example2_nonconvex/` | `nonconvex_tra` | Primal and decision-estimate errors |
-| Fig. 7 | `results/example2_nonconvex/` | `nonconvex_aux` | Multiplier deviations and auxiliary states |
-| Fig. 8 | `results/example2_nonconvex/` | `nonconvex_exp` | Aggregate, canonical-state, and consistency errors; constraint residuals |
-| Fig. 9 | `results/example2_nonconvex/` | `nonconvex_globality` | Annular-diagnostic trajectories and global best-response gaps |
+| Fig. 1a | `results/figure1/` | `convex_case` | Convex feasible set, potential contours, and vGNE |
+| Fig. 1b | `results/figure1/` | `nonconvex_case` | Nonconvex feasible set, potential contours, global vGNE, and nonglobal KKT point |
+| Fig. 2 | `results/example1_convex/` | `shared_topology` | Shared ten-node communication graph |
+| Fig. 3 | `results/example1_convex/` | `convex_tra` | Primal and decision-estimate squared errors |
+| Fig. 4 | `results/example1_convex/` | `convex_aux` | Multiplier consensus and auxiliary-state trajectories |
+| Fig. 5 | `results/example1_convex/` | `convex_exp` | Normalized logarithmic aggregate error and shared-constraint residual |
+| Fig. 6 | `results/example2_nonconvex/` | `nonconvex_tra` | Primal and decision-estimate squared errors for the ten-agent nonconvex example |
+| Fig. 7 | `results/example2_nonconvex/` | `nonconvex_aux` | Scaled multiplier deviations and scaled auxiliary states |
+| Fig. 8 | `results/example2_nonconvex/` | `nonconvex_exp` | Normalized logarithmic aggregate, canonical-state, and consistency errors; original and canonical constraint residuals |
+| Fig. 9 | `results/example3_nonglobal/` | `nonconvex_globality` | Four-agent strategy trajectories, unilateral global best-response gaps, and KKT residuals |
 
 ## Numerical verification
 
-The MATLAB implementations include numerical checks of the theorem conditions
-and post-simulation residuals. All model parameters, algorithmic gains, and
-deterministic initial conditions are specified in the source files.
-
 ### Certificate verification
 
-The numerical certificates for Tables II and III are generated by
-`example_1_convex.m` and `example2_nonconvex.m`, respectively:
+The numerical certificates for Tables II and III are generated by `example_1_convex.m` and `example2_nonconvex.m`, respectively:
 
 | Manuscript item | Verification output |
 | --- | --- |
 | Table II | `results/example1_convex/convex_theorem_audit.csv` |
 | Table III | `results/example2_nonconvex/nonconvex_theorem_audit.csv` |
-| Table III, full precision | `results/example2_nonconvex/table_III_certificate.txt` |
+| Table III full precision | `results/example2_nonconvex/table_III_certificate.txt` |
 
-The Table III text certificate reports 17 significant digits of the
-double-precision values used to check the strict inequalities, including the
-threshold in Eq. (40), the selected `gamma` and `iota`, and the Lyapunov
-positivity margins. Infinite one-sided bounds appear as `Inf` or `-Inf`.
-The code uses computed whole-domain constants, recorded in
-`results/example2_nonconvex/nonconvex_model_constants.csv`; the manuscript
-displays conservative upper bounds and rounded values. The code-computed
-Eq. (40) threshold is approximately `6.5473888645e5`, below the manuscript's
-displayed bound `6.549e5`. Substituting the manuscript's displayed upper bounds
-gives approximately `6.5484897783e5`, also below `6.549e5`; the selected `iota`
-is `1e6`.
+The Table III text certificate records 17 significant digits of the double-precision values used to verify every strict inequality in Theorem 2 and Appendix G, including the core small-gain condition, the auxiliary parameter bounds, the selected gain `gamma = 2200`, the rank margin `iota = 2025`, and all five Lyapunov positivity margins. Infinite one-sided bounds appear as `Inf` or `-Inf`.
 
-### Independent two-player diagnostic
+The script evaluates the certificate using computed model and sublevel constants stored in `results/example2_nonconvex/nonconvex_model_constants.csv`, whereas the manuscript reports conservative rounded upper bounds. The code-computed threshold for the rank condition in Eq. 31 is approximately `1.5287660333e3`; substituting the manuscript's displayed rounded upper bounds yields approximately `1.5287914450e3`. Both values lie below the displayed bound `1.529e3` and well below `iota = 2025`.
 
-Fig. 9 is generated by `run_annular_globality_diagnostic()` in
-`example2_nonconvex.m` using two distinct systems: `annular_direct_rhs()`
-(direct primal-dual flow) and `annular_canonical_rhs()` (canonical lifted flow).
-`annular_global_gap()` evaluates the unilateral global best-response gap.
+### Four-agent global-recovery comparison
 
-The actual initial states, state ordering, solver tolerances, maximum step,
-time interval, gains, terminal primal states, terminal KKT residuals, and global
-best-response gaps are recorded in:
+Fig. 9 is generated by `example3_nonglobal_branch.m`, which simulates the direct DBPD algorithm on the original nonconvex constraint and the proposed C-DBPD algorithm over an undirected four-cycle from identical primal, opponent-estimate, multiplier, and auxiliary-state initializations near a locally stable nonglobal KKT branch. This comparison is separate from the ten-agent regional certificate in `example2_nonconvex.m` and illustrates the global-recovery mechanism of Lemma 6.
 
-- `results/example2_nonconvex/globality_gap_report.txt`
-- `results/example2_nonconvex/annular_globality_summary.csv`
+Full-precision model parameters, initial states, terminal states, KKT residuals, consistency residuals, unilateral global best-response gaps, and tightened-solver differences are recorded in:
 
-Both flows use the same primal initialization, with different multiplier and
-canonical-state initializations. This diagnostic is separate from the ten-agent
-certificate used to verify Theorem 2.
+- `results/example3_nonglobal/nonglobal_branch_report.txt`
+- `results/example3_nonglobal/nonglobal_branch_summary.csv`
+- `results/example3_nonglobal/nonglobal_solver_sensitivity.csv`
 
 ### Verification records
 
-From the repository folder, record a MATLAB run with a fresh diary filename
-(MATLAB appends to an existing diary file):
+From the repository folder, record a full MATLAB run with a fresh diary filename so MATLAB does not append to an existing log:
 
 ```matlab
 diary('reproduction_log_local.txt')
@@ -186,30 +144,20 @@ disp('Reproducing Tables II-III and Figs. 2-9')
 disp(version)
 example_1_convex
 example2_nonconvex
+example3_nonglobal_branch
 diary off
 ```
 
-Run `python main.py` separately for Fig. 1, after installing `requirements.txt`.
-The release includes `reproduction_log.txt`, `python_reproduction_log.txt`,
-both post-simulation audit tables, and the nonconvex solver-sensitivity and
-terminal-sensitivity tables. Both MATLAB scripts must reach
-`Completed. Results:`. Failed theorem, baseline, tightened-solver, or diagnostic
-assertions terminate execution.
+Run `python main.py` separately for Fig. 1 after installing `requirements.txt`. The release includes `reproduction_log.txt`, `python_reproduction_log.txt`, all theorem and post-simulation audit tables, and the solver-sensitivity tables. All three MATLAB scripts must reach `Completed. Results:`; any failed theorem, baseline, tightened-solver, or branch-recovery assertion stops execution.
 
-The fixed release is
-[`TAC-v8-reproducibility`](https://github.com/SichenQian/Distributed_Bregman_Primal--Dual_Algorithms_for_vGNE_Seeking_with_Nonlinear_Coupled_Inequalities/releases/tag/TAC-v8-reproducibility).
-The verification logs supplied with this release correspond to the tagged
-source-code version. `verification_manifest.json` records the runtime versions,
-validation counts, and Git blob hashes of the source files and verification
-records. To use the fixed source version:
+The fixed release is [`TAC-v9-reproducibility`](https://github.com/SichenQian/Distributed_Bregman_Primal--Dual_Algorithms_for_vGNE_Seeking_with_Nonlinear_Coupled_Inequalities/releases/tag/TAC-v9-reproducibility). The verification logs supplied with this release correspond to the tagged source-code version. `verification_manifest.json` records the runtime versions, validation counts, high-precision bound comparisons, and Git blob hashes of the source files, documentation, and verification records. To check out the fixed source version:
 
 ```sh
-git checkout TAC-v8-reproducibility
+git checkout TAC-v9-reproducibility
 git rev-parse HEAD
 ```
 
-Generated figures and large MAT files are excluded from Git and can be
-regenerated using the commands above.
+Generated figures and large MAT files are excluded from Git and are regenerated by the commands above.
 
 ## Citation
 
